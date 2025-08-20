@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .product-box {
+      border: 1px solid #000;
+      padding: 15px;
+      margin-bottom: 20px;
+      width: 400px;
+    }
+    select {
+      margin-bottom: 15px;
+      padding: 5px;
+      font-size: 14px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 8px;
+      margin: 5px 0;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-box">
+    <h3>Product List</h3>
+    <label for="category">Filter by Category: </label>
+    <select id="category">
+      <option value="All">All</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Books">Books</option>
+    </select>
+
+    <div id="product-list"></div>
+  </div>
+
+  <script>
+    // Products with categories
+    const products = [
+      { name: "T-Shirt", category: "Clothing" },
+      { name: "Jeans", category: "Clothing" },
+      { name: "Headphones", category: "Electronics" },
+      { name: "Smartphone", category: "Electronics" },
+      { name: "Novel", category: "Books" },
+      { name: "Cookbook", category: "Books" }
+    ];
+
+    const categorySelect = document.getElementById("category");
+    const productList = document.getElementById("product-list");
+
+    // Function to display products
+    function displayProducts(filter) {
+      productList.innerHTML = ""; // clear previous items
+      const filtered = filter === "All" 
+        ? products 
+        : products.filter(p => p.category === filter);
+
+      filtered.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.textContent = product.name;
+        productList.appendChild(div);
+      });
+    }
+
+    // Event listener for dropdown
+    categorySelect.addEventListener("change", () => {
+      displayProducts(categorySelect.value);
+    });
+
+    // Initial load
+    displayProducts("All");
+  </script>
+</body>
+</html>
