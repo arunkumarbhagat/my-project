@@ -1,22 +1,42 @@
+Concurrent Ticket Booking System
+ ### Project Description
 
-Of course. Here is a description and the key learnings for the Concurrent Ticket Booking System project.
+This project is about building a ticket booking API using Node.js and Express.js, simulating a real-world scenario where multiple users may attempt to book the same seat at the same time. The core challenge is preventing double-booking through proper concurrency handling.
 
-Project Description
-This project involves creating a ticket booking API using Node.js and Express.js that simulates a real-world scenario where multiple users might try to book the same seat at the same time. The primary challenge is to handle these concurrent requests safely to prevent issues like double-booking.
+The solution uses a seat locking mechanism:
 
-The solution is a seat locking mechanism. When a user selects a seat, the API places a temporary lock on it, making it unavailable to others for a short period (e.g., one minute). Within this window, only the user who locked the seat can proceed to confirm the booking. If the booking isn't confirmed, the lock expires automatically, and the seat becomes available again. The entire state of the seats (e.g., available, locked, booked) is managed within an in-memory data structure for simplicity. The API includes endpoints to view all seats, lock a specific seat, and confirm a booking, with clear error messages for invalid actions like trying to lock an already booked seat.
+When a user selects a seat, it gets temporarily locked (e.g., for one minute).
 
-Key Learnings
-This project provides crucial insights into building robust, multi-user applications:
+Only that user can confirm the booking within the lock period.
 
-Handling Concurrency and Race Conditions: This is the core takeaway. You'll gain a practical understanding of what a race condition is and implement a locking strategy to prevent it, ensuring data integrity when multiple operations happen simultaneously. 🏎️
+If not confirmed, the lock expires automatically, making the seat available again.
 
-Complex State Management: You will learn to manage a dynamic, in-memory state. This involves designing a data structure to track not just if a seat is available or booked, but also if it's temporarily locked, who locked it, and when that lock expires.
+The system maintains seat states—available, locked, booked—in an in-memory data structure for simplicity.
 
-Designing Multi-Step Processes (Workflows): You'll practice designing an API that follows a specific user workflow (view seats -> lock a seat -> confirm booking). This is a common pattern in applications that involve transactions, like e-commerce checkouts or reservation systems.
+Endpoints allow users to view seats, lock a seat, and confirm bookings, with clear error handling for invalid actions (e.g., locking an already booked seat).
 
-Asynchronous Timers for Business Logic: You'll use asynchronous JavaScript functions like setTimeout to implement the lock expiration feature. This is a powerful technique for handling time-sensitive state changes automatically on the server. ⏳
+### Key Learnings
 
-Building Robust Business Logic: You'll go beyond basic CRUD (Create, Read, Update, Delete) operations to implement complex rules that govern the booking process. This enhances your ability to translate real-world requirements into functional code.
+Concurrency & Race Condition Handling
 
-Defensive Programming: The project forces you to anticipate and handle various edge cases and invalid user actions, improving your ability to build resilient and error-proof applications.
+Learned to manage simultaneous requests using a locking mechanism to ensure data integrity.
+
+Complex State Management
+
+Designed an in-memory structure to track seat status, lock ownership, and lock expiration.
+
+Multi-Step Workflow Design
+
+Practiced implementing transaction-like flows (view → lock → confirm), common in booking and checkout systems.
+
+Asynchronous Timers
+
+Used setTimeout to automatically release seat locks after expiration, handling time-sensitive logic.
+
+Robust Business Logic
+
+Implemented rules beyond CRUD to reflect real-world booking behavior.
+
+Defensive Programming
+
+Anticipated edge cases (e.g., trying to lock a booked seat) and added clear error handling for resilience.
