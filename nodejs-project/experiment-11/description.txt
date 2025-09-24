@@ -1,0 +1,31 @@
+This project involves building a secure banking API using Express.js, a popular Node.js framework. The core challenge is to protect sensitive endpoints like viewing a balance, making a deposit, or withdrawing funds. This protection is implemented using JSON Web Tokens (JWT), a standard for creating access tokens.
+
+The application features a public /login route where a user can authenticate with hardcoded credentials to receive a signed JWT. All other banking routes (/balance, /deposit, /withdraw) are protected. Access to these routes is controlled by a custom middleware function that intercepts incoming requests. This middleware checks for a valid JWT in the Authorization: Bearer <token> header, verifying its signature before allowing the request to proceed. The API is also designed to handle common errors gracefully, such as when a token is missing, invalid, or when a user attempts to withdraw more money than they have.
+Of course. Here is a description and the key learnings for the JWT Authenticati
+on project for a secure banking API.
+
+Project Description
+This project involves building a secure banking API using Express.js, a popular Node.js framework. The core challenge is to protect sensitive endpoints like viewing a balance, making a deposit, or withdrawing funds. This protection is implemented using JSON Web Tokens (JWT), a standard for creating access tokens.
+
+The application features a public /login route where a user can authenticate with hardcoded credentials to receive a signed JWT. All other banking routes (/balance, /deposit, /withdraw) are protected. Access to these routes is controlled by a custom middleware function that intercepts incoming requests. This middleware checks for a valid JWT in the Authorization: Bearer <token> header, verifying its signature before allowing the request to proceed. The API is also designed to handle common errors gracefully, such as when a token is missing, invalid, or when a user attempts to withdraw more money than they have.
+
+Key Learnings
+This project offers practical experience in modern backend development and API security:
+
+API Development with Express.js: You'll solidify your skills in creating RESTful API endpoints, handling HTTP requests (GET, POST), and managing application routing in Express. 🌐
+
+Authentication Fundamentals: You will learn the core principles of stateless authentication. Unlike session-based authentication, JWT allows the server to verify a user's identity on each request without having to store session data.
+
+JSON Web Tokens (JWT) Lifecycle: This project provides end-to-end experience with JWTs:
+
+Generation: Creating and signing a token with a secret key upon successful user login.
+
+Transmission: Understanding the standard practice of sending a token from the client to the server in the Authorization header.
+
+Verification: Decoding and verifying the token's signature on the server to ensure its authenticity and integrity.
+
+Express Middleware: You'll gain a deep understanding of middleware, one of the most powerful features of Express. You'll learn to write a function that acts as a gatekeeper, inspecting requests and controlling access to protected routes. 🛡️
+
+Secure Route Protection: You'll learn the practical pattern of applying authentication middleware to specific routes, effectively separating public endpoints from private, secure ones.
+
+Error Handling: You will implement robust error handling for both security and business logic, learning to send appropriate HTTP status codes like 401 Unauthorized, 403 Forbidden, or 400 Bad Request with clear error messages.

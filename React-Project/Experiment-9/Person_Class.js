@@ -9,11 +9,9 @@ class Person {
         return `Name: ${this.name}, Age: ${this.age}`;
     }
 }
-
-// Subclass: Student
 class Student extends Person {
     constructor(name, age, course) {
-        super(name, age); // call parent constructor
+        super(name, age);
         this.course = course;
     }
 
@@ -35,8 +33,7 @@ class Teacher extends Person {
         return `${super.displayInfo()}, Subject: ${this.subject}`;
     }
 }
-
-// --- Demonstration ---
+// Example usage
 const student1 = new Student("Alice", 20, "Computer Science");
 const teacher1 = new Teacher("Mr. John", 45, "Mathematics");
 

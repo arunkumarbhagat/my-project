@@ -1,0 +1,11 @@
+Description
+
+The SVG Drawing Tool is a simple web-based application that allows users to draw freehand inside an SVG canvas using mouse events. When the user presses the mouse button (mousedown) on the canvas and drags (mousemove), a continuous path is drawn that follows the cursor. When the mouse is released (mouseup) or leaves the canvas (mouseleave), the drawing action stops.
+
+This tool demonstrates the use of:
+
+SVG <path> elements to represent freehand lines.
+
+JavaScript DOM manipulation to dynamically create and update path data (d attribute).
+
+Mouse events (mousedown, mousemove, mouseup) for interactive drawing.npm create vite@latest my-react-apps
