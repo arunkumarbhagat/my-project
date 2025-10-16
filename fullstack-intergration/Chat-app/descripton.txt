@@ -1,3 +1,7 @@
+Title
+Connecting React Frontend to Express API Using Axios  
+
+
 Description
 
 This project demonstrates how to connect a React frontend with an Express.js backend API using Axios for data fetching. The backend Express server provides a simple REST API endpoint that returns a list of products, where each product has a name and a price.

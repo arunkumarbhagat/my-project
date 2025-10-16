@@ -1,3 +1,6 @@
+Title
+Develop Real-Time Chat Application Using WebSocket Connections (Socket.io)
+
 Description
 
 This project demonstrates how to build a real-time chat application using WebSocket connections powered by Socket.io on a Node.js backend and React frontend. It showcases the concept of two-way communication between the client and server, allowing instant message exchange without the need to refresh the page.
