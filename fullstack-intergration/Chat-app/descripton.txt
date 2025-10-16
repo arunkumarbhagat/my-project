@@ -1,0 +1,15 @@
+Description
+
+This project demonstrates how to connect a React frontend with an Express.js backend API using Axios for data fetching. The backend Express server provides a simple REST API endpoint that returns a list of products, where each product has a name and a price.
+
+On the frontend, a React component uses Axios to send an HTTP GET request to the Express API when the component first loads (mounts). The fetched data is then displayed on the web page in a user-friendly layout, showing each product’s name and price clearly.
+
+The project also includes:
+
+A loading state to inform the user while data is being fetched.
+
+An error state to handle and display any issues that occur during the API request.
+
+Proper configuration to ensure the React frontend and Express backend communicate seamlessly when running locally (using CORS if necessary).
+
+This task helps you understand how to integrate the frontend and backend of a full-stack JavaScript application, manage HTTP requests, and dynamically render fetched data in React.

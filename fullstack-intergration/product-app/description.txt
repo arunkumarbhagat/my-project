@@ -1,0 +1,13 @@
+Description
+
+This project demonstrates how to build a real-time chat application using WebSocket connections powered by Socket.io on a Node.js backend and React frontend. It showcases the concept of two-way communication between the client and server, allowing instant message exchange without the need to refresh the page.
+On the backend, an Express.js server is set up and integrated with Socket.io to handle events such as connecting, sending messages, and disconnecting. The server broadcasts messages to all connected clients in real time, ensuring that everyone in the chat room instantly sees new messages.
+On the frontend, a React application connects to the Socket.io server and provides a simple chat interface. Users can:
+
+Enter their name and join the chat room
+
+Send messages that appear instantly to all participants
+
+See real-time updates as other users join, leave, or send messages
+
+This project helps you understand key real-time web concepts such as WebSocket communication, event handling, and state synchronization between multiple clients. It also reinforces how Socket.io simplifies managing connections, broadcasting events, and ensuring smooth communication between frontend and backend components.
