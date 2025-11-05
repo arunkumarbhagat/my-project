@@ -1,0 +1,54 @@
+🔐 Project Title:
+
+End-to-End Encrypted Secure Chat Application
+
+📘 Project Description:
+
+This project is a real-time chat application built with Node.js, Express, Socket.IO, and MongoDB, designed to provide secure, private communication between users using end-to-end encryption (E2EE).
+
+Unlike ordinary chat apps where the server can read messages, this system ensures that only the sender and receiver can decrypt and read the messages — the server merely relays encrypted data. This approach keeps user data safe from unauthorized access, even if the database or server is compromised.
+
+⚙️ Key Features:
+1. 🔒 End-to-End Encryption (E2EE)
+
+Messages are encrypted on the sender’s browser using AES encryption (via CryptoJS).
+
+The encrypted text (ciphertext) is sent to the server through Socket.IO.
+
+The server never decrypts the messages — it just relays them to other clients in the same chat room.
+
+Each chat room has its own shared password/key used to encrypt and decrypt messages.
+
+2. 🧑‍🤝‍🧑 Multi-Room Chat System
+
+Users can create or join rooms with a name and password.
+
+The room password is hashed using bcrypt before storing in MongoDB — so even the database doesn’t know the real password.
+
+Users in the same room can exchange encrypted messages securely.
+
+3. 🧰 Backend (Server-Side)
+
+Built using Node.js + Express for server routes and APIs.
+
+Socket.IO provides real-time, event-driven communication between server and clients.
+
+MongoDB (with Mongoose) stores room details and hashed passwords.
+
+bcrypt is used for password hashing and validation.
+
+dotenv manages environment variables (Mongo URI, port, etc.).
+
+4. 💬 Frontend (Client-Side)
+
+Simple HTML, CSS, and JavaScript frontend served from the public/ folder.
+
+Uses Socket.IO client and CryptoJS (AES encryption) in the browser.
+
+Users can:
+
+Create a new room (with password)
+
+Join existing rooms (password-protected)
+
+Send and receive encrypted messages in real time
