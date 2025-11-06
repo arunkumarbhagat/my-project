@@ -1,0 +1,20 @@
+Title
+
+Student Registration Form with HTML5 Validation
+
+Objective
+
+To design and implement a basic student registration form using HTML that collects user information and ensures valid input through HTML5 form validation features.
+The goal is to create a simple, user-friendly, and error-resistant form interface.
+
+
+In this experiment, a web-based student registration form is developed using pure HTML5.
+The form includes the following input fields:
+
+Name: Accepts alphabetic characters only.
+
+Email: Ensures a valid email format using the type="email" attribute.
+
+Age: Accepts only numerical values with appropriate range validation.
+
+Each field is equipped with HTML5 validation attributes such as required, type, pattern, and min/max to verify the correctness of user input before submission.
